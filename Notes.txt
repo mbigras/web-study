@@ -1,0 +1,47 @@
+Web Study
+
+Links
+
+http://www.graphviz.org/pdf/dotguide.pdf
+https://naildrivin5.com/blog/2016/12/08/learn-graphviz-and-up-your-diagramming-game.html
+https://www.iterm2.com/documentation-images.html
+https://www.iterm2.com/utilities/imgcat
+
+Overview
+
+What does the rankdir=BT mean?
+Build then imgcat
+
+Build then imgcat
+
+dot -T png -o web.png web.dot && imgcat web.png
+
+What does the rankdir=BT mean?
+
+http://www.graphviz.org/pdf/dotguide.pdf
+
+The mode rankdir=BT is useful for draw- ing upward-directed graphs.
+
+cat <<'EOF' | dot -T png | imgcat
+digraph classes {
+  rankdir=BT
+  node[shape=record]
+
+  User           -> ActiveRecordBase
+  Address        -> ActiveRecordBase
+  Product        -> ActiveRecordBase
+  SpecialProduct -> Product
+}
+EOF
+
+cat <<'EOF' | dot -T png | imgcat
+digraph classes {
+  node[shape=record]
+
+  User           -> ActiveRecordBase
+  Address        -> ActiveRecordBase
+  Product        -> ActiveRecordBase
+  SpecialProduct -> Product
+}
+EOF
+
