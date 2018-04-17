@@ -1,0 +1,11 @@
+digraph classes {
+	rankdir=BT
+	node[shape=record]
+
+	UDP -> IP
+	TCP -> IP
+
+	TLS -> TCP
+
+	DNS -> UDP
+}
